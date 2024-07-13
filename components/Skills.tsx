@@ -70,7 +70,7 @@ const Skills = () => {
 
     useEffect(() => {
         const numCircles = skillsData.length;
-        const radius = 200;
+        const radius = window.innerWidth < 600? 150 : 200;
         const angleIncrement = (2 * Math.PI) / numCircles;
 
         const newCircles = [];
@@ -88,7 +88,7 @@ const Skills = () => {
         <div className='h-screen w-full flex flex-col items-center justify-center'>
             <div className="h-full w-full relative flex items-center justify-center">
                 <div className="relative">
-                    <div className="rounded-full bg-white w-32 h-32 flex items-center justify-center shadow-xl">
+                    <div className="rounded-full bg-white  w-24 h-24 md:w-32 md:h-32  flex items-center justify-center shadow-xl">
                         <div className="text-center">
                             <p className="text-3xl font-bold">Skills</p>
                             <p className="text-lg text-gray-600">🗣️</p>
