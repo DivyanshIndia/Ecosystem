@@ -70,7 +70,7 @@ const Skills = () => {
 
     useEffect(() => {
         const numCircles = skillsData.length;
-        const radius = window.innerWidth < 600? 150 : 200;
+        const radius = window.innerWidth < 600 ? 150 : 200;
         const angleIncrement = (2 * Math.PI) / numCircles;
 
         const newCircles = [];
@@ -109,7 +109,7 @@ const Skills = () => {
                                 layout='fill'
                                 className="md:w-3/4 md:h-3/4  w-fit h-fit object-contain rounded-full"
                             />
-                            <div className="absolute bottom-full h-fit w-48 mb-2 p-2 bg-black/80 font-mono  text-white text-[0.5rem] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-600">
+                            <div className="absolute bottom-full h-fit w-24 md:w-32 mb-2 p-2 bg-black/80 font-mono  text-white text-[0.5rem] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-600">
                                 {skillsData[index]?.description}
                             </div>
                         </div>
