@@ -10,8 +10,8 @@ import Skills from "@/components/Skills";
 const page = () => {
   return (
     <div
-      className=" scroll-smooth bg-cover  bg-fixed bg-no-repeat bg-blue-500 "
-      style={{  backgroundImage: "url('/gameDay.svg')" }}
+      className=" scroll-smooth bg-cover  bg-fixed bg-no-repeat bg-orange-500 "
+      style={{ backgroundImage: "url('/gameDay.svg')" }}
     >
 
       <div className="h-full w-full">

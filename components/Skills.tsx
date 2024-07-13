@@ -85,7 +85,7 @@ const Skills = () => {
     }, []);
 
     return (
-        <div className='h-screen w-full flex flex-col items-center justify-center'>
+        <div className='h-screen w-full flex flex-col items-center justify-center '>
             <div className="h-full w-full relative flex items-center justify-center">
                 <div className="relative">
                     <div className="rounded-full bg-white  w-24 h-24 md:w-32 md:h-32  flex items-center justify-center shadow-xl">
@@ -109,7 +109,7 @@ const Skills = () => {
                                 layout='fill'
                                 className="md:w-3/4 md:h-3/4  w-fit h-fit object-contain rounded-full"
                             />
-                            <div className="absolute bottom-full h-fit w-24 md:w-32 mb-2 p-2 bg-black/80 font-mono  text-white text-[0.5rem] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-600">
+                            <div className="absolute hidden md:block bottom-full h-fit w-24 md:w-32 mb-2 p-2 bg-black/80 font-mono  text-white text-[0.3rem] md:text-[0.5rem] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-600">
                                 {skillsData[index]?.description}
                             </div>
                         </div>
