@@ -3,10 +3,10 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="h-full w-screen bg-zinc-800/30 p-1  scrollbar-hide ">
-      <div className=" h-full w-screen  bg-zinc-900/90 p-3 rounded-lg flex flex-col md:flex-row flex-wrap ">
+    <div className="h-full w-fit bg-white p-1  scrollbar-hide  text-wrap">
+      <div className=" h-full w-fit  bg-gradient-to-r from-red-600 via-red-500 to-pink-600 p-3 rounded-lg flex flex-col md:flex-row flex-wrap ">
         <div className="flex gap-5 p-4 flex-col items-center">
-          <div className=" p-4 h-96 border-2 border-gray-200 rounded-md flex justify-center items-center bg-white text-zinc-800  ">
+          <div className=" p-4 h-96  rounded-md flex justify-center items-center bg-white text-zinc-800  ">
             <cite className=" font-serif">
               “I'm selfish, impatient and a little insecure. I make mistakes, I
               am out of control and at times hard to handle. But if you can't
@@ -17,21 +17,21 @@ const page = () => {
               </em>
             </cite>
           </div>
-          <div className="h-96 p-4 border-2 border-gray-200 rounded-md flex justify-center items-center bg-zinc-700/20  hover:animate-pulse text-white">
+          <div className="h-96 p-4  rounded-md flex justify-center items-center bg-zinc-700/20  hover:animate-pulse text-white">
             <cite className=" font-serif">
               “You know you're in love when you can't fall asleep because
               reality is finally better than your dreams.” ―
               <em className="font-mono text-sm font-semibold">Dr. Seuss </em>
             </cite>
           </div>
-          <div className="h-96 p-4  border-2 border-gray-200 rounded-md flex justify-center items-center bg-zinc-700/20 text-white  hover:animate-bounce">
+          <div className="h-96 p-4   rounded-md flex justify-center items-center bg-zinc-700/20 text-white  hover:animate-bounce">
             <cite className=" font-serif">
               “Don’t walk in front of me… I may not follow Don’t walk behind me…
               I may not lead Walk beside me… just be my friend” ―
               <em className="font-mono text-sm font-semibold">Albert Camus </em>
             </cite>
           </div>
-          <div className="h-56 w-56 p-12 relative  border-2 border-gray-200 rounded-full flex justify-center items-center bg-white text-zinc-800  hover:animate-pulse">
+          <div className="h-fit w-fit p-12 relative   rounded-full flex justify-center items-center bg-white text-zinc-800  hover:animate-pulse">
             <cite className="  font-serif">
               “To live is the rarest thing in the world. Most people exist, that
               is all.” ―
@@ -40,7 +40,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex gap-5 flex-col items-center">
-          <div className=" p-4 h-96 border-2 border-gray-200 rounded-md flex justify-center items-center bg-zinc-700/20 text-white  w-1/2">
+          <div className=" p-4   w-fit md:w-1/2 rounded-md flex justify-center items-center bg-zinc-700/20 text-white  ">
             <cite className=" font-serif">
               “Here's to the crazy ones. The misfits. The rebels. The
               troublemakers. The round pegs in the square holes. The ones who
@@ -54,7 +54,7 @@ const page = () => {
               <em className="font-mono text-sm font-semibold">Steve Jobs</em>
             </cite>
           </div>
-          <div className=" p-4 h-96 border-2 border-gray-200 rounded-md flex justify-center items-center bg-zinc-700/20 text-white ">
+          <div className=" p-4 h-96  rounded-md flex justify-center items-center bg-zinc-700/20 text-white ">
             <cite className=" font-serif">
               “You've gotta dance like there's nobody watching, Love like you'll
               never be hurt, Sing like there's nobody listening, And live like
@@ -65,7 +65,7 @@ const page = () => {
               </em>{" "}
             </cite>
           </div>
-          <div className="p-4 h-96  border-2 border-gray-200 rounded-md flex justify-center items-center  bg-zinc-700/20 text-white  hover:animate-pulse">
+          <div className="p-4 h-96   rounded-md flex justify-center items-center  bg-zinc-700/20 text-white  hover:animate-pulse">
             <cite className=" font-serif">
               “Darkness cannot drive out darkness: only light can do that. Hate
               cannot drive out hate: only love can do that.” ―
@@ -76,7 +76,7 @@ const page = () => {
               </em>{" "}
             </cite>{" "}
           </div>
-          <div className="h-48 p-4 border-2 border-gray-200 rounded-full flex justify-center items-center bg-white text-zinc-800  hover:animate-bounce">
+          <div className="h-fit p-4  rounded-full flex justify-center items-center bg-white text-zinc-800  hover:animate-bounce">
             <cite className=" font-serif">
               “Insanity is doing the same thing, over and over again, but
               expecting different results.” ―
@@ -86,7 +86,7 @@ const page = () => {
               </em>{" "}
             </cite>{" "}
           </div>
-          <div className="h-96 w-96 p-4 border-2 border-gray-200 rounded-md flex justify-center items-center  bg-zinc-700/20 text-white hover:animate-bounce">
+          <div className="h-96 w-96 p-4  rounded-md flex justify-center items-center  bg-zinc-700/20 text-white hover:animate-bounce">
             <cite className=" font-serif">
               “It is better to be hated for what you are than to be loved for
               what you are not.” ―
@@ -96,7 +96,7 @@ const page = () => {
               </em>{" "}
             </cite>{" "}
           </div>
-          <div className="h-48  p-4 border-2 border-gray-200 rounded-md flex justify-center items-center   bg-white text-zinc-800  hover:scale-75 transition-all">
+          <div className="h-48  p-4  rounded-md flex justify-center items-center   bg-white text-zinc-800  hover:scale-75 transition-all">
             <cite className=" font-serif">
               “We accept the love we think we deserve.” ―
               <em className="font-mono text-sm font-semibold">
@@ -107,7 +107,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex gap-5 flex-col items-center p-4">
-          <div className=" p-4 h-96 border-2 border-gray-200 rounded-md flex justify-center items-center bg-white text-zinc-800  ">
+          <div className=" p-4 h-96  rounded-md flex justify-center items-center bg-white text-zinc-800  ">
             <cite className=" font-serif">
               “Twenty years from now you will be more disappointed by the things
               that you didn't do than by the ones you did do. So throw off the
@@ -118,7 +118,7 @@ const page = () => {
               </em>
             </cite>
           </div>
-          <div className=" p-4 h-96 border-2 border-gray-200 rounded-md flex justify-center items-center bg-zinc-700 /20 text-white ">
+          <div className=" p-4 h-96  rounded-md flex justify-center items-center bg-zinc-700 /20 text-white ">
             <cite className=" font-serif">
               “I believe that everything happens for a reason. People change so
               that you can learn to let go, things go wrong so that you
@@ -131,7 +131,7 @@ const page = () => {
               </em>{" "}
             </cite>
           </div>
-          <div className="p-4 h-96  border-2 border-gray-200 rounded-md flex justify-center items-center  bg-zinc-700/20 text-white  hover:animate-pulse">
+          <div className="p-4 h-96   rounded-md flex justify-center items-center  bg-zinc-700/20 text-white  hover:animate-pulse">
             <cite className=" font-serif">
               “To be yourself in a world that is constantly trying to make you
               something else is the greatest accomplishment.” ―
@@ -141,7 +141,7 @@ const page = () => {
               </em>{" "}
             </cite>{" "}
           </div>
-          <div className="h-56 w-96 p-12 relative  border-2 border-gray-200 rounded-full flex justify-center items-center bg-white text-zinc-800  hover:animate-pulse">
+          <div className="h-fit w-fit p-12 relative   rounded-full flex justify-center items-center bg-white text-zinc-800  hover:animate-pulse">
             <cite className="  font-serif">
               “Without music, life would be a mistake.” ―
               <em className="font-mono text-sm font-semibold">
