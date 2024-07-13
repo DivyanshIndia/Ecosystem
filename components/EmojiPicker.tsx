@@ -22,7 +22,7 @@ const EmojiPicker = () => {
         ))}
       </div>
       <div className="flex items-center justify-center">
-      <div className="mt-10 text-7xl text-center p-4 bg-black w-fit rounded-full ">{selectedEmoji}</div>
+      <div className="mt-10 text-7xl  text-center p-4 bg-black w-fit rounded-full ">{selectedEmoji}</div>
 
       </div>
     </div>

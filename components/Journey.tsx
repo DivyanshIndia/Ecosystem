@@ -51,8 +51,8 @@ const JOURNEY_ITEMS = [
 
 const Journey = () => {
   return (
-    <div className="text-center h-screen flex flex-col items-center justify-center gap-10 text-gray-900 font-mono font-bold relative bg-transparent bg-gradient-to-b from-zinc-200 backdrop-blur-sm dark:from-inherit bg-gray-200 dark:bg-zinc-800/10 p-8">
-      <div className="bg-blue-600 rounded-lg w-1 md:w-2 h-full z-0 absolute top-0 left-1/2 transform -translate-x-1/2"></div>
+    <div className="text-center h-screen flex flex-col items-center justify-center gap-10 text-gray-900 font-mono font-bold relative bg-transparent backdrop-blur-sm    p-8 ">
+      <div className="bg-blue-600 rounded-sm w-1 md:w-2 h-full z-0 absolute top-0 left-1/2 transform -translate-x-1/2"></div>
       {JOURNEY_ITEMS.map((item, index) => (
         <div
           key={index}

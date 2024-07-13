@@ -1,6 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
+
+
 
 const Introduction = () => {
   return (
@@ -19,9 +24,17 @@ const Introduction = () => {
         <p className="text-base text-white bg-gray-800/50 rounded-sm w-fit px-4 ">
           email : divyanshbhatt46@gmail.com
         </p>
+        <div className="flex flex-row gap-2">
+          <Link href="https://www.linkedin.com/in/divyanshbhatt0/">   <FaLinkedin size={30} color="white" />
+          </Link>
+          <Link href="https://github.com/DivyanshIndia">          <FaGithub size={30} color="white" />
+          </Link>
+
+        </div>
       </div>
     </div>
   );
 };
 
 export default Introduction;
+
