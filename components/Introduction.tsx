@@ -22,7 +22,10 @@ const Introduction = () => {
           component at a time."
         </p>
         <p className="text-base text-white bg-gray-800/50 rounded-sm w-fit px-4 ">
-          email : divyanshbhatt46@gmail.com
+
+          <Link href={"mailto:divyanshbhatt46@gmail.com"}>
+            email : divyanshbhatt46@gmail.com
+          </Link>
         </p>
         <div className="flex flex-row gap-2">
           <Link href="https://www.linkedin.com/in/divyanshbhatt0/">   <FaLinkedin size={30} color="white" />
