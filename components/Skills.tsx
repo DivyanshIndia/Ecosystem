@@ -85,7 +85,7 @@ const Skills = () => {
     }, []);
 
     return (
-        <div className='h-screen w-full flex flex-col items-center justify-center '>
+        <div className='h-screen w-full flex flex-col items-center justify-center   bg-gradient-to-b from-zinc-200  backdrop-blur-lg dark:bg-zinc-800/30 dark:from-inherit '>
             <div className="h-full w-full relative flex items-center justify-center">
                 <div className="relative">
                     <div className="rounded-full bg-white  w-24 h-24 md:w-32 md:h-32  flex items-center justify-center shadow-xl">

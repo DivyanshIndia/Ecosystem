@@ -24,7 +24,7 @@ const Introduction = () => {
         <p className="text-base text-white bg-gray-800/50 rounded-sm w-fit px-4 ">
 
           <Link href={"mailto:divyanshbhatt46@gmail.com"}>
-            email : divyanshbhatt46@gmail.com
+            Email : divyanshbhatt46@gmail.com
           </Link>
         </p>
         <div className="flex flex-row gap-2">
