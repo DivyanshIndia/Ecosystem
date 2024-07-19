@@ -4,6 +4,8 @@ import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
+import { HiOutlineDownload } from "react-icons/hi";
+
 
 
 
@@ -13,7 +15,7 @@ const Introduction = () => {
 
       <div className="bg-zinc-900/50 p-10 rounded-lg  flex flex-col items-center justify-center gap-5 ">
         <div>
-          <Image src={"./walkingInRain.svg"} width={200} height={200} alt="drink Coffee" className=" rounded-full  " />
+          <Image src={"./walkingInRain.svg"} width={200} height={200} unoptimized alt="drink Coffee" className=" rounded-full  " />
         </div>
 
         <p className="font-bold border-b-2 border-white"> Divyansh Bhatt</p>
@@ -32,6 +34,8 @@ const Introduction = () => {
           </Link>
           <Link href="https://github.com/DivyanshIndia">          <FaGithub size={30} color="white" />
           </Link>
+          <HiOutlineDownload size={30} color="white" title="Download Resume" />
+
 
         </div>
       </div>

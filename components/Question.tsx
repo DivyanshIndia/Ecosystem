@@ -3,7 +3,7 @@ import React from "react";
 
 const Question = () => {
   return (
-    <div className="h-screen w-full flex flex-col items-center justify-center   bg-gradient-to-b from-zinc-200  backdrop-blur-lg dark:bg-zinc-800/30 dark:from-inherit       ">
+    <div className="h-screen w-full flex flex-col items-center justify-center   bg-gradient-to-b from-zinc-200  backdrop-blur-lg dark:bg-zinc-800/30 dark:from-inherit   text-white    ">
       <p className=" text-3xl md:text-5xl font-mono font-bold lg:font-semibold animate-bounce">
         Need my work ?
       </p>
