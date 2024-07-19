@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 const skillsData = [
@@ -66,51 +66,28 @@ const skillsData = [
 ];
 
 const Skills = () => {
-    const [circles, setCircles] = useState<{ top: string; left: string; }[]>([]);
-
-    useEffect(() => {
-        const numCircles = skillsData.length;
-        const radius = window.innerWidth < 600 ? 150 : 200;
-        const angleIncrement = (2 * Math.PI) / numCircles;
-
-        const newCircles = [];
-        for (let i = 0; i < numCircles; i++) {
-            const angle = i * angleIncrement;
-            const top = `${radius * Math.cos(angle)}px`;
-            const left = `${radius * Math.sin(angle)}px`;
-            newCircles.push({ top, left });
-        }
-
-        setCircles(newCircles);
-    }, []);
-
     return (
-        <div className='h-screen w-full flex flex-col items-center justify-center   bg-gradient-to-b from-zinc-200  backdrop-blur-lg dark:bg-zinc-800/30 dark:from-inherit '>
-            <div className="h-full w-full relative flex items-center justify-center">
-                <div className="relative">
-                    <div className="rounded-full bg-white  w-24 h-24 md:w-32 md:h-32  flex items-center justify-center shadow-xl">
-                        <div className="text-center">
-                            <p className="text-3xl font-bold">Skills</p>
-                            <p className="text-lg text-gray-600">🗣️</p>
-                        </div>
-                    </div>
-                    {circles.map((circle, index) => (
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-200 via-zinc-300 to-zinc-400 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900">
+            <div className="max-w-6xl w-full px-4 py-12">
+                <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8">My Skills</h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {skillsData.map((skill, index) => (
                         <div
                             key={index}
-                            className="group absolute rounded-full bg-white w-20 md:w-32 h-20 md:h-32 hover:scale-150 z-0 hover:z-10 transition-transform duration-300 flex items-center justify-center"
-                            style={{
-                                top: circle.top,
-                                left: circle.left,
-                            }}
+                            className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
                         >
-                            <Image
-                                src={skillsData[index]?.imageUrl}
-                                alt={skillsData[index]?.name}
-                                layout='fill'
-                                className="md:w-3/4 md:h-3/4  w-fit h-fit object-contain rounded-full"
-                            />
-                            <div className="absolute hidden md:block bottom-full h-fit w-24 md:w-32 mb-2 p-2 bg-black/80 font-mono  text-white text-[0.3rem] md:text-[0.5rem] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-600">
-                                {skillsData[index]?.description}
+                            <div className="w-full h-36 md:h-48  ">
+                                <Image
+                                    src={skill.imageUrl}
+                                    alt={skill.name}    
+                                    width={200}
+                                    height={200}
+                                    className="w-full h-full object-contain rounded-full"
+                                />
+                            </div>
+                            <div className="p-4 md:p-6">
+                                <h2 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100">{skill.name}</h2>
+                                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mt-2">{skill.description}</p>
                             </div>
                         </div>
                     ))}

@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="h-full w-fit bg-white p-1  scrollbar-hide  text-wrap">
+    <div className="h-full w-fit bg-white   scrollbar-hide  text-wrap">
       <div className=" h-full w-fit  bg-gradient-to-r from-red-600 via-red-500 to-pink-600 p-3 rounded-lg flex flex-col md:flex-row flex-wrap ">
         <div className="flex gap-5 p-4 flex-col items-center">
           <div className=" p-4 h-96  rounded-md flex justify-center items-center bg-white text-zinc-800  ">
