@@ -67,22 +67,22 @@ const skillsData = [
 
 const Skills = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-200 via-zinc-300 to-zinc-400 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900">
+        <div className="min-h-screen flex items-center justify-center mt-5">
             <div className="max-w-6xl w-full px-4 py-12">
-                <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8">My Skills</h1>
+                <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8"> Skills</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {skillsData.map((skill, index) => (
                         <div
                             key={index}
-                            className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
+                            className="rounded-lg shadow-lg  backdrop-blur-lg bg-zinc-800/10 overflow-hidden transition-transform transform hover:scale-105 border border-white"
                         >
-                            <div className="w-full h-36 md:h-48  ">
+                            <div className="w-full h-36 md:h-48  p-4 ">
                                 <Image
                                     src={skill.imageUrl}
-                                    alt={skill.name}    
+                                    alt={skill.name}
                                     width={200}
                                     height={200}
-                                    className="w-full h-full object-contain rounded-full"
+                                    className="w-full h-full object-contain "
                                 />
                             </div>
                             <div className="p-4 md:p-6">
