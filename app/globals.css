@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes spin-slow {
   0% {
     transform: rotate(0deg);

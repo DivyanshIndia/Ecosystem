@@ -7,6 +7,7 @@ const skillsData = [
         name: 'HTML',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg',
         description: 'HTML (HyperText Markup Language) is the standard language for creating web pages. It provides the structure of a webpage.'
+
     },
     {
         name: 'CSS',
@@ -68,15 +69,15 @@ const skillsData = [
 const Skills = () => {
     return (
         <div className="min-h-screen flex items-center justify-center mt-5">
-            <div className="max-w-6xl w-full px-4 py-12">
+            <div className=" w-full p-5 ">
                 <h1 className="text-5xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8"> Skills</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-5">
                     {skillsData.map((skill, index) => (
                         <div
                             key={index}
                             className="rounded-lg shadow-lg  backdrop-blur-lg bg-zinc-900/30 overflow-hidden transition-transform transform hover:scale-105 border border-white"
                         >
-                            <div className="w-full h-36 md:h-48  p-4 ">
+                            <div className="w-full h-28 md:h-36  p-4 ">
                                 <Image
                                     src={skill.imageUrl}
                                     alt={skill.name}
@@ -85,7 +86,7 @@ const Skills = () => {
                                     className="w-full h-full object-contain  "
                                 />
                             </div>
-                            <div className="p-4 md:p-6">
+                            <div className="p-2 md:p-4">
                                 <h2 className="text-xl md:text-2xl font-bold text-white">{skill.name}</h2>
                                 <p className="text-sm md:text-base text-white  mt-2">{skill.description}</p>
                             </div>
