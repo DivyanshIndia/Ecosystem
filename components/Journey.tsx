@@ -1,80 +1,83 @@
-/* eslint-disable react/no-unescaped-entities */
+"use client"
 import React from "react";
+import Link from "next/link";
 
-const JOURNEY_ITEMS = [
+interface JourneyItem {
+  title: string;
+  company: string;
+  company_link: string;
+  start_date: string;
+  end_date: string;
+  description: string;
+}
+
+const JOURNEY_ITEMS: JourneyItem[] = [
   {
     title: "Software Developer",
     company: "PIP Trade",
     company_link: "https://piptrade.org/",
-    icon: "🔗",
     start_date: "April, 2024",
     end_date: "Present",
-    translate: "1/2",
+    description: "Developing innovative software solutions for trading platforms.",
   },
   {
     title: "React.js Developer Intern",
     company: "ClingMultisolutions",
     company_link: "https://www.clingmultisolutions.org/",
-    icon: "🔗",
     start_date: "Oct, 2023",
     end_date: "March, 2024",
-    translate: "0",
+    description: "Worked on building responsive and interactive web applications.",
   },
   {
     title: "React and Node.js Developer Intern",
     company: "Clinical AI Assistance",
     company_link: "https://www.clinicalaiassistance.com/",
-    icon: "🔗",
     start_date: "Dec, 2023",
     end_date: "Feb, 2024",
-    translate: "1/2",
+    description: "Developed AI-powered tools for clinical decision support.",
   },
   {
     title: "Bachelor's of CSE",
     company: "GBPIET",
     company_link: "https://gbpiet.ac.in/",
-    icon: "🔗",
     start_date: "Nov, 2020",
     end_date: "June, 2023",
-    translate: "0",
+    description: "Studied Computer Science and Engineering, focusing on software development.",
   },
   {
     title: "Diploma in CSE",
     company: "Govt. Polytechnic Pithuwala",
     company_link: "https://www.gpdehradun.org.in/",
-    icon: "🔗",
     start_date: "Aug, 2018",
     end_date: "Sept 2020",
-    translate: "1/2",
+    description: "Gained foundational knowledge in computer science and programming.",
   },
 ];
 
-const Journey = () => {
+const JourneyItem: React.FC<JourneyItem> = ({ title, company, company_link, start_date, end_date, description }) => (
+  <div className="mb-8 border-b border-gray-200 pb-4">
+    <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
+    <Link href={company_link} className="text-blue-600 hover:text-blue-800 transition-colors duration-300 mb-2 inline-block">
+      {company}
+    </Link>
+    <p className="text-sm text-gray-600 mb-2">{start_date} - {end_date}</p>
+    <p className="text-gray-700">{description}</p>
+  </div>
+);
+
+const Journey: React.FC = () => {
   return (
-    <div className="text-center h-screen flex flex-col items-center justify-center gap-10 text-gray-900 font-mono font-bold relative bg-transparent backdrop-blur-sm    p-8 ">
-      <div className="bg-blue-600 rounded-sm w-1 md:w-2 h-full z-0 absolute top-0 left-1/2 transform -translate-x-1/2"></div>
-      <div className="bg-blue-600 rounded-sm w-4  h-2  absolute top-0 left-1/2 transform -translate-x-1/2"></div>
-      <div className="bg-blue-600 rounded-sm w-4  h-2  absolute bottom-0 left-1/2 transform -translate-x-1/2"></div>
-
-
-      {JOURNEY_ITEMS.map((item, index) => (
-        <div
-          key={index}
-          className={`w-fit md:w-96 p-4 md:shadow-2xl rounded-lg bg-zinc-900/80 border border-white z-10 backdrop-blur-lg ${index % 2 === 0 ? 'lg:mr-auto lg:transform lg:translate-x-full' : 'lg:ml-auto lg:transform lg:-translate-x-full'
-            }`}
-        >
-          <p className="text-pink-600">{item.title}</p>
-          <p className="text-sm text-blue-500">
-            {item.company}{" "}
-            <a href={item.company_link} target="_blank" rel="noopener noreferrer">
-              {item.icon}
-            </a>
-          </p>
-          <p className="text-xs text-red-400">
-            {item.start_date} - {item.end_date}
-          </p>
+    <div className="min-h-screen w-full  py-2 px-4  font-sans">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold text-center  text-gray-800 py-2 rounded-md bg-white">
+          Journey
+        </h2>
+        <div className="bg-white shadow-md rounded-lg p-6">
+          {JOURNEY_ITEMS.map((item, index) => (
+            <JourneyItem key={index} {...item} />
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

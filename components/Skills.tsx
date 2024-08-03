@@ -1,96 +1,84 @@
-'use client'
-import React from 'react';
+"use client"
+import React from "react";
 import Image from 'next/image';
 
-const skillsData = [
+interface Skill {
+    name: string;
+    description: string;
+    imageUrl: string;
+}
+
+const skills: Skill[] = [
     {
         name: 'HTML',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg',
-        description: 'HTML (HyperText Markup Language) is the standard language for creating web pages. It provides the structure of a webpage.'
-
+        description: 'Standard language for creating web pages'
     },
     {
         name: 'CSS',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg',
-        description: 'CSS (Cascading Style Sheets) is used to style and layout web pages. It controls the look and feel of a website.'
+        description: 'Styles and layouts web pages'
     },
     {
         name: 'JavaScript',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',
-        description: 'JavaScript is a versatile programming language used to create dynamic and interactive effects within web browsers.'
+        description: 'Creates dynamic and interactive effects'
     },
     {
         name: 'ReactJS',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
-        description: 'ReactJS is a JavaScript library for building user interfaces. It allows developers to create reusable UI components.'
+        description: 'Builds reusable UI components'
     },
     {
         name: 'ExpressJS',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png',
-        description: 'ExpressJS is a web application framework for Node.js, designed to build web applications and APIs easily.'
+        description: 'Web application framework for Node.js'
     },
     {
         name: 'NodeJS',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg',
-        description: 'NodeJS is a JavaScript runtime built on Chrome\'s V8 JavaScript engine, used for building scalable network applications.'
+        description: 'JavaScript runtime for scalable applications'
     },
     {
         name: 'MongoDB',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Mongodb-ar21.svg/640px-Mongodb-ar21.svg.png',
-        description: 'MongoDB is a NoSQL database known for its flexibility and scalability, making it ideal for handling large volumes of data.'
+        description: 'Flexible and scalable NoSQL database'
     },
     {
         name: 'Python',
         imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg',
-        description: 'Python is a high-level programming language known for its readability and versatility. It\'s used in web development, data science, and more.'
-    },
-    {
-        name: 'Git',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg',
-        description: 'Git is a version control system that lets developers track changes to their code and collaborate with others.'
-    },
-    {
-        name: 'GitHub',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg',
-        description: 'GitHub is a web-based platform for version control and collaboration, allowing multiple people to work on projects simultaneously.'
-    },
-    {
-        name: 'NextJS',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg',
-        description: 'NextJS is a React framework that enables functionality such as server-side rendering and generating static websites.'
-    },
-    {
-        name: 'Django',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg',
-        description: 'Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.'
+        description: 'Versatile language for various applications'
     },
 ];
 
-const Skills = () => {
+const SkillCard: React.FC<Skill> = ({ name, description, imageUrl }) => (
+    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <div className="p-6">
+            <div className="w-16 h-16 mb-4 mx-auto">
+                <Image
+                    src={imageUrl}
+                    alt={name}
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-contain"
+                />
+            </div>
+            <h3 className="text-xl font-bold mb-2 text-gray-800 text-center">{name}</h3>
+            <p className="text-gray-600 mb-4 text-center text-sm">{description}</p>
+        </div>
+    </div>
+);
+
+const Skills: React.FC = () => {
     return (
-        <div className="min-h-screen flex items-center justify-center mt-5">
-            <div className=" w-full p-5 ">
-                <h1 className="text-5xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8"> Skills</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-5">
-                    {skillsData.map((skill, index) => (
-                        <div
-                            key={index}
-                            className="rounded-lg shadow-lg  backdrop-blur-lg bg-zinc-900/30 overflow-hidden transition-transform transform hover:scale-105 border border-white"
-                        >
-                            <div className="w-full h-28 md:h-36  p-4 ">
-                                <Image
-                                    src={skill.imageUrl}
-                                    alt={skill.name}
-                                    width={200}
-                                    height={200}
-                                    className="w-full h-full object-contain  "
-                                />
-                            </div>
-                            <div className="p-2 md:p-4">
-                                <h2 className="text-xl md:text-2xl font-bold text-white">{skill.name}</h2>
-                                <p className="text-sm md:text-base text-white  mt-2">{skill.description}</p>
-                            </div>
-                        </div>
+        <div className="min-h-screen w-full  py-16 px-4 sm:px-6 lg:px-8 font-sans">
+            <div className="max-w-7xl mx-auto">
+                <h2 className="text-3xl font-bold text-center mb-12 py-2 rounded-md bg-white ">
+                    Skills
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    {skills.map((skill, index) => (
+                        <SkillCard key={index} {...skill} />
                     ))}
                 </div>
             </div>
