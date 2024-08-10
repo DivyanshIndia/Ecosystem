@@ -22,7 +22,7 @@ const Page = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="bg-gradient-to-b from-orange-900 to-orange-700 min-h-screen">
+    <div className="bg-gradient-to-b from-zinc-900 to-zinc-700 min-h-screen">
       <nav className="flex justify-center bg-gray-100 dark:bg-zinc-800 rounded-md p-2 mb-4 absolute top-10 left-1/2 transform -translate-x-1/2">
         {components.map(({ icon }, index) => (
           <div

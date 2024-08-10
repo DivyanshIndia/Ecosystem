@@ -21,7 +21,7 @@ const projects: Project[] = [
 
 const ProjectCard: React.FC<Project> = ({ title, description, icon }) => (
   <motion.div
-    className="bg-white dark:bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
+    className="bg-white/90 dark:bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
     whileHover={{ y: -5 }}
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
     <div className="min-h-screen w-full py-16 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto pt-16"> 
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-100 dark:text-gray-200">
-          My Projects
+           Projects
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {projects.map((project, index) => (

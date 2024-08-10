@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import Image from 'next/image';
+import { motion } from "framer-motion";
 
 interface Skill {
     name: string;
@@ -51,8 +52,13 @@ const skills: Skill[] = [
     },
 ];
 
-const SkillCard: React.FC<Skill> = ({ name, description, imageUrl }) => (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+const SkillCard: React.FC<Skill & { index: number }> = ({ name, description, imageUrl, index }) => (
+    <motion.div
+        className="bg-white dark:bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
         <div className="p-6">
             <div className="w-16 h-16 mb-4 mx-auto">
                 <Image
@@ -63,22 +69,27 @@ const SkillCard: React.FC<Skill> = ({ name, description, imageUrl }) => (
                     className="w-full h-full object-contain"
                 />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800 text-center">{name}</h3>
-            <p className="text-gray-600 mb-4 text-center text-sm">{description}</p>
+            <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-200 text-center">{name}</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4 text-center text-sm">{description}</p>
         </div>
-    </div>
+    </motion.div>
 );
 
 const Skills: React.FC = () => {
     return (
-        <div className="min-h-screen w-full  py-16 px-4 sm:px-6 lg:px-8 font-sans">
-            <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-12 py-2 rounded-md bg-white ">
+        <div className="min-h-screen w-full py-16 px-4 sm:px-6 lg:px-8 font-sans">
+            <div className="max-w-7xl mx-auto pt-16">
+                <motion.h2
+                    className="text-3xl font-bold text-center mb-12 text-gray-100 dark:text-gray-200"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
                     Skills
-                </h2>
+                </motion.h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {skills.map((skill, index) => (
-                        <SkillCard key={index} {...skill} />
+                        <SkillCard key={index} {...skill} index={index} />
                     ))}
                 </div>
             </div>
