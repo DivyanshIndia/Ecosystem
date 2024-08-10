@@ -10,12 +10,12 @@ const Journey = dynamic(() => import("@/components/Journey"), { ssr: false });
 const Skills = dynamic(() => import("@/components/Skills"), { ssr: false });
 
 const components = [
-  { Component: Introduction, icon: "👋" },
+  { Component: Introduction, icon: "🐸" },
   { Component: Emotion, icon: "🎭" },
   { Component: Question, icon: "❓" },
-  { Component: Projects, icon: "💼" },
-  { Component: Journey, icon: "🗺️" },
-  { Component: Skills, icon: "🛠️" }
+  { Component: Projects, icon: "🐼" },
+  { Component: Journey, icon: "🐫" },
+  { Component: Skills, icon: "🦧" }
 ];
 
 const Page = () => {
