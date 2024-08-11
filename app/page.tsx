@@ -15,8 +15,8 @@ interface BentoItem {
 }
 
 const bentoItems: Omit<BentoItem, 'size'>[] = [
-  { title: "Frontend Radio", subtitle: "Daily Mix", content: "12 Tracks", href: "/page1", imageSrc: "https://nextui.org/images/hero-card-complete.jpeg" },
-  { title: "Backend Beats", subtitle: "Weekly Playlist", content: "15 Tracks", href: "/page2", imageSrc: "https://nextui.org/images/album-cover.png" },
+  { title: "Frontend Radio", subtitle: "Daily Mix", content: "12 Tracks", href: "/portfolio", imageSrc: "https://nextui.org/images/hero-card-complete.jpeg" },
+  { title: "Backend Beats", subtitle: "Weekly Playlist", content: "15 Tracks", href: "/quotes", imageSrc: "https://nextui.org/images/album-cover.png" },
   { title: "DevOps Dynamics", subtitle: "Monthly Compilation", content: "20 Tracks", href: "/page3", imageSrc: "https://nextui.org/images/fruit-1.jpeg" },
   { title: "UI/UX Melodies", subtitle: "Design Inspirations", content: "10 Tracks", href: "/page4", imageSrc: "https://nextui.org/images/fruit-2.jpeg" },
   { title: "Full Stack Fusion", subtitle: "Coding Playlist", content: "18 Tracks", href: "/page5", imageSrc: "https://nextui.org/images/fruit-3.jpeg" },
