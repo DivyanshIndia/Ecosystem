@@ -57,13 +57,13 @@ const Introduction: React.FC = () => {
                 color="github"
               />
               <button
-                className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors duration-300 hover:scale-105"
+                className="flex items-center gap-2 text-green-600 hover:text-green-500 transition-colors duration-300 hover:scale-105"
                 title="Download Resume"
               >
 
                 <a href="/divyansh_bhatt_resume.pdf"
                   download="divyansh_bhatt_resume.pdf"
-                  className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors duration-300 hover:scale-105"
+                  className="flex items-center gap-2 text-green-600 hover:text-green-500 transition-colors duration-300 hover:scale-105"
                   title="Download Resume"
                 >
                   <HiOutlineDownload size={20} />
@@ -87,8 +87,8 @@ interface SocialLinkProps {
 
 const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label, color }) => {
   const colorClasses = {
-    linkedin: 'text-[#0A66C2] hover:text-[#00A0DC]',
-    github: 'text-[#181717] hover:text-[#2EA44F] dark:text-[#f5f5f5] dark:hover:text-[#6CC644]'
+    linkedin: 'text-black dark:text-white hover:text-blue-500',
+    github: 'text-black dark:text-white hover:text-orange-600 '
   };
 
   return (
