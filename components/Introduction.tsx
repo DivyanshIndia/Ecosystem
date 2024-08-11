@@ -40,7 +40,7 @@ const Introduction: React.FC = () => {
             <div className={`flex flex-wrap justify-center md:justify-start items-center gap-4 transform transition-all duration-700 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <Link
                 href="mailto:divyanshbhatt46@gmail.com"
-                className="bg-gray-800 dark:bg-gray-200 hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors duration-300 rounded-md px-4 py-2 text-sm text-white dark:text-gray-800 hover:scale-105"
+                className="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 rounded-md px-2 py-1 md:text-sm text-xs text-white hover:scale-105"
               >
                 Contact Me
               </Link>
@@ -48,18 +48,27 @@ const Introduction: React.FC = () => {
                 href="https://www.linkedin.com/in/divyanshbhatt0/"
                 icon={<FaLinkedin size={20} />}
                 label="LinkedIn"
+                color="linkedin"
               />
               <SocialLink
                 href="https://github.com/DivyanshIndia"
                 icon={<FaGithub size={20} />}
                 label="GitHub"
+                color="github"
               />
               <button
-                className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors duration-300 hover:scale-105"
+                className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors duration-300 hover:scale-105"
                 title="Download Resume"
               >
-                <HiOutlineDownload size={20} />
-                <span className="text-sm">Resume</span>
+
+                <a href="/divyansh_bhatt_resume.pdf"
+                  download="divyansh_bhatt_resume.pdf"
+                  className="flex items-center gap-2 text-green-600 hover:text-green-700 transition-colors duration-300 hover:scale-105"
+                  title="Download Resume"
+                >
+                  <HiOutlineDownload size={20} />
+                  <span className="text-sm hidden sm:inline">Resume</span>
+                </a>
               </button>
             </div>
           </div>
@@ -73,16 +82,24 @@ interface SocialLinkProps {
   href: string;
   icon: React.ReactNode;
   label: string;
+  color: 'linkedin' | 'github';
 }
 
-const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
-  <Link
-    href={href}
-    className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors duration-300 hover:scale-105"
-  >
-    {icon}
-    <span className="text-sm">{label}</span>
-  </Link>
-);
+const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label, color }) => {
+  const colorClasses = {
+    linkedin: 'text-[#0A66C2] hover:text-[#00A0DC]',
+    github: 'text-[#181717] hover:text-[#2EA44F] dark:text-[#f5f5f5] dark:hover:text-[#6CC644]'
+  };
+
+  return (
+    <Link
+      href={href}
+      className={`flex items-center gap-2 ${colorClasses[color]} transition-colors duration-300 hover:scale-105`}
+    >
+      {icon}
+      <span className="text-sm hidden sm:inline">{label}</span>
+    </Link>
+  );
+};
 
 export default Introduction;
