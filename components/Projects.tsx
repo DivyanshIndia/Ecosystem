@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { motion } from "framer-motion";
+import { CookingPot } from "lucide-react"
 
 interface Project {
   title: string;
@@ -9,14 +10,14 @@ interface Project {
 }
 
 const projects: Project[] = [
-  { title: "Project Management System", description: "Streamline your workflow", icon: "📊" },
-  { title: "Crypto: The New Currency?", description: "Explore the world of cryptocurrency", icon: "💰" },
-  { title: "Ping Pong Game", description: "Challenge your reflexes", icon: "🏓" },
-  { title: "Quiz Game", description: "Test your knowledge", icon: "🧠" },
-  { title: "Blockchain Explorer", description: "Dive into blockchain technology", icon: "🔗" },
-  { title: "AI Task Scheduler", description: "Optimize your time with AI", icon: "🤖" },
-  { title: "VR Museum Tour", description: "Experience art in virtual reality", icon: "🖼️" },
-  { title: "Smart Home System", description: "Control your home with ease", icon: "🏠" },
+  // { title: "Project Management System", description: "Streamline your workflow", icon: "📊" },
+  // { title: "Crypto: The New Currency?", description: "Explore the world of cryptocurrency", icon: "💰" },
+  // { title: "Ping Pong Game", description: "Challenge your reflexes", icon: "🏓" },
+  // { title: "Quiz Game", description: "Test your knowledge", icon: "🧠" },
+  // { title: "Blockchain Explorer", description: "Dive into blockchain technology", icon: "🔗" },
+  // { title: "AI Task Scheduler", description: "Optimize your time with AI", icon: "🤖" },
+  // { title: "VR Museum Tour", description: "Experience art in virtual reality", icon: "🖼️" },
+  // { title: "Smart Home System", description: "Control your home with ease", icon: "🏠" },
 ];
 
 const ProjectCard: React.FC<Project> = ({ title, description, icon }) => (
@@ -44,17 +45,21 @@ const ProjectCard: React.FC<Project> = ({ title, description, icon }) => (
 
 const Projects: React.FC = () => {
   return (
-    <div className="min-h-screen w-full py-16 px-4 sm:px-6 lg:px-8 font-sans">
-      <div className="max-w-7xl mx-auto pt-16"> 
+    <div className="min-h-screen w-full py-16 px-4 sm:px-6 lg:px-8 font-sans ">
+      <div className="max-w-7xl mx-auto pt-16">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-100 dark:text-gray-200">
-           Projects
+          Projects
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {projects.map((project, index) => (
+          {projects.length && projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
         </div>
       </div>
+      <div className="h-96 flex items-center justify-center ">
+        <CookingPot size={100} className=" text-white w-full mt-4" />
+      </div>
+
     </div>
   );
 };

@@ -1,25 +1,28 @@
-"use client"
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 
-interface JourneyItem {
+interface JourneyItemProps {
   title: string;
   company: string;
   company_link: string;
   start_date: string;
   end_date: string;
   description: string;
+  type: "work" | "education";
+  index: number;
 }
 
-const JOURNEY_ITEMS: JourneyItem[] = [
+const JOURNEY_ITEMS: JourneyItemProps[] = [
   {
     title: "Software Developer",
     company: "PIP Trade",
     company_link: "https://piptrade.org/",
     start_date: "April, 2024",
-    end_date: "Present",
+    end_date: "Oct, 2024",
     description: "Developing innovative software solutions for trading platforms.",
+    type: "work",
+    index: 0,
   },
   {
     title: "React.js Developer Intern",
@@ -28,6 +31,8 @@ const JOURNEY_ITEMS: JourneyItem[] = [
     start_date: "Oct, 2023",
     end_date: "March, 2024",
     description: "Worked on building responsive and interactive web applications.",
+    type: "work",
+    index: 1,
   },
   {
     title: "React and Node.js Developer Intern",
@@ -36,6 +41,8 @@ const JOURNEY_ITEMS: JourneyItem[] = [
     start_date: "Dec, 2023",
     end_date: "Feb, 2024",
     description: "Developed AI-powered tools for clinical decision support.",
+    type: "work",
+    index: 2,
   },
   {
     title: "Bachelor's of CSE",
@@ -44,6 +51,8 @@ const JOURNEY_ITEMS: JourneyItem[] = [
     start_date: "Nov, 2020",
     end_date: "June, 2023",
     description: "Studied Computer Science and Engineering, focusing on software development.",
+    type: "education",
+    index: 3,
   },
   {
     title: "Diploma in CSE",
@@ -52,52 +61,89 @@ const JOURNEY_ITEMS: JourneyItem[] = [
     start_date: "Aug, 2018",
     end_date: "Sept 2020",
     description: "Gained foundational knowledge in computer science and programming.",
+    type: "education",
+    index: 4,
   },
 ];
 
-const JourneyItem: React.FC<JourneyItem & { index: number }> = ({
-  title, company, company_link, start_date, end_date, description, index
+const JourneyItem: React.FC<JourneyItemProps> = ({
+  title,
+  company,
+  company_link,
+  start_date,
+  end_date,
+  description,
+  index,
+  type,
 }) => (
-  <motion.div
-    initial={{ opacity: 0, x: -50 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="mb-8 relative"
-  >
-    <div className="absolute left-0 w-1 h-full bg-gray-300 dark:bg-gray-700" />
-    <div className="ml-6 relative">
-      <div className="absolute -left-9 top-0 w-5 h-5 rounded-full bg-blue-500 dark:bg-blue-400" />
-      <div className="bg-white dark:bg-zinc-800 p-4 rounded-lg shadow-md">
-        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">{title}</h3>
-        <Link href={company_link} className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 mb-2 inline-block">
-          {company}
-        </Link>
-        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{start_date} - {end_date}</p>
-        <p className="text-gray-700 dark:text-gray-300">{description}</p>
+  <div className="relative pl-8 sm:pl-32 py-6 group">
+    {/* Timeline line */}
+    <div className="absolute left-0 sm:left-16 h-full w-[2px] bg-gradient-to-b from-blue-300 to-green-300 group-hover:from-blue-500 group-hover:to-green-500 transition-colors duration-500"></div>
+
+    {/* Timeline dot */}
+    <div className="absolute left-[-8px] sm:left-14 top-8 w-4 h-4 rounded-full bg-white shadow-xl border-4 border-blue-500 group-hover:scale-125 transition-transform duration-300"></div>
+
+    {/* Content card */}
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+      <div className="flex items-center gap-4 mb-4">
+        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${type === "work"
+          ? "bg-gradient-to-br from-blue-400 to-blue-600"
+          : "bg-gradient-to-br from-green-400 to-green-600"
+          }`}>
+          {type === "work" ? (
+            <FaBriefcase className="text-white text-xl" />
+          ) : (
+            <FaGraduationCap className="text-white text-xl" />
+          )}
+        </div>
+
+        <div className="flex-grow">
+          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
+            {title}
+          </h3>
+          <Link
+            href={company_link}
+            className="text-blue-500 hover:text-blue-700 dark:text-blue-400 font-medium hover:underline inline-flex items-center gap-1"
+          >
+            {company}
+          </Link>
+        </div>
+
+        <div className="hidden sm:block text-right">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+            {start_date} - {end_date}
+          </span>
+        </div>
       </div>
+
+      <div className="sm:hidden mb-2">
+        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+          {start_date} - {end_date}
+        </span>
+      </div>
+
+      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        {description}
+      </p>
     </div>
-  </motion.div>
+  </div>
 );
 
 const Journey: React.FC = () => {
   return (
-    <div className="min-h-screen w-full py-16 px-4 font-sans">
-      <div className="max-w-3xl mx-auto pt-16">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-center text-gray-100 dark:text-gray-200 mb-12"
-        >
-           Journey
-        </motion.h2>
+    <section className="w-full py-16 px-4 sm:px-6 lg:px-8  font-sans">
+      <div className="max-w-4xl mx-auto pt-16">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          Journey
+        </h2>
+
         <div className="relative">
           {JOURNEY_ITEMS.map((item, index) => (
             <JourneyItem key={index} {...item} index={index} />
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

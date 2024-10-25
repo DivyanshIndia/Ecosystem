@@ -15,7 +15,7 @@ const Introduction: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen font-sans p-4">
-      <div className={`bg-white dark:bg-zinc-800 p-6 sm:p-8 rounded-lg shadow-md max-w-4xl w-full transform transition-all duration-700 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+      <div className={` p-6 sm:p-8 rounded-lg shadow-md max-w-4xl w-full transform transition-all duration-700 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
           <div className={`transform transition-all duration-700 delay-100 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <Image
@@ -23,6 +23,7 @@ const Introduction: React.FC = () => {
               width={1000}
               height={1000}
               alt="Profile Picture"
+              priority
               className="rounded-full w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
