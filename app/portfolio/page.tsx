@@ -18,25 +18,25 @@ const Introduction = dynamic(() => Promise.resolve(() => {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen  p-4 overflow-hidden text-white ">
+    <div className="relative flex items-center justify-center min-h-screen  p-4 overflow-hidden text-white py-16">
       <div className={`relative p-6 sm:p-8 rounded-lg     transform transition-all duration-700 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        <div className="flex flex-col md:flex-row items-center  space-y-6 md:space-y-0 md:space-x-8 w-full ">
+        <div className="flex flex-col-reverse md:flex-row items-center  space-y-6 md:space-y-0 md:space-x-8 w-full relative ">
 
           <div className="flex-1 p-2 text-center md:text-left">
             <h1 className={`text-4xl font-bold   mb-2 transform transition-all duration-700 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               Divyansh Bhatt
             </h1>
-            <p className={`text-2xl  mb-4 transform transition-all text-red-500 duration-700 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <p className={`text-xl md:text-2xl  mb-4 transform transition-all  duration-700 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               Frontend Developer | MERN Stack Developer
             </p>
-            <p className={`text-xl mb-6 transform transition-all duration-700 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <p className={`md:text-xl mb-6 transform transition-all duration-700 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               &quot;Architecting digital excellence: MongoDB to React, backend to beautiful.&quot;
 
             </p>
             <div className={`flex flex-wrap justify-center md:justify-start items-center gap-4 transform transition-all duration-700 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} `}>
               <Link
                 href="mailto:divyanshbhatt46@gmail.com"
-                className="bg-blue-500 hover:bg-blue-900 transition-colors duration-300 rounded-md px-2 py-1 md:text-xl  text-white hover:scale-105"
+                className=" hover:text-blue-500  hover:underline transition-colors duration-300 rounded-md px-2 py-1   text-white hover:scale-105"
               >
                 Contact Me
               </Link>

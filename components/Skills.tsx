@@ -54,7 +54,7 @@ const skills: Skill[] = [
 
 const SkillCard: React.FC<Skill & { index: number }> = ({ name, description, imageUrl, index }) => (
     <motion.div
-        className="bg-white dark:bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
+        className=" rounded-lg overflow-hidden  hover:shadow-lg transition-shadow duration-300 ease-in-out"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -69,8 +69,8 @@ const SkillCard: React.FC<Skill & { index: number }> = ({ name, description, ima
                     className="w-full h-full object-contain"
                 />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-200 text-center">{name}</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4 text-center text-sm">{description}</p>
+            <h3 className="text-xl font-bold mb-2 text-white text-center">{name}</h3>
+            <p className="text-gray-400 dark:text-gray-400 mb-4 text-center text-sm">{description}</p>
         </div>
     </motion.div>
 );

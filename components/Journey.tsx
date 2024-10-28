@@ -40,7 +40,7 @@ const JOURNEY_ITEMS: JourneyItemProps[] = [
     company_link: "https://www.clinicalaiassistance.com/",
     start_date: "Dec, 2023",
     end_date: "Feb, 2024",
-    description: "Developed AI-powered tools for clinical decision support.",
+    description: "Developed social app for people with Autism disorder spectrum.",
     type: "work",
     index: 2,
   },
@@ -84,7 +84,7 @@ const JourneyItem: React.FC<JourneyItemProps> = ({
     <div className="absolute left-[-8px] sm:left-14 top-8 w-4 h-4 rounded-full bg-white shadow-xl border-4 border-blue-500 group-hover:scale-125 transition-transform duration-300"></div>
 
     {/* Content card */}
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+    <div className=" rounded-lg  p-6 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
       <div className="flex items-center gap-4 mb-4">
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${type === "work"
           ? "bg-gradient-to-br from-blue-400 to-blue-600"
@@ -98,7 +98,7 @@ const JourneyItem: React.FC<JourneyItemProps> = ({
         </div>
 
         <div className="flex-grow">
-          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
+          <h3 className="text-xl font-bold text-white mb-1">
             {title}
           </h3>
           <Link
@@ -110,19 +110,19 @@ const JourneyItem: React.FC<JourneyItemProps> = ({
         </div>
 
         <div className="hidden sm:block text-right">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium  text-gray-400 ">
             {start_date} - {end_date}
           </span>
         </div>
       </div>
 
       <div className="sm:hidden mb-2">
-        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium  text-gray-400 ">
           {start_date} - {end_date}
         </span>
       </div>
 
-      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+      <p className="text-gray-400  leading-relaxed">
         {description}
       </p>
     </div>
